@@ -1,0 +1,7 @@
+Hibernate / Webapp / Context classLoader
+Class cast exception on same
+shading problems
+Spring Boot one Jar
+Class.forName vs ClassLoader.load
+ContextClassLoader
+ClassLoader security!
