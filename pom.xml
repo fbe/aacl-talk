@@ -12,7 +12,9 @@
 	<modules>
 		<module>aacl-01-own-classloader</module>
 		<module>aacl-02-delegationmodelbreaking-classloader</module>
-	</modules>
+        <module>aacl-03-moduleisolation</module>
+        <module>aacl-0X-javaagent</module>
+    </modules>
 
 	<build>
 		<plugins>
@@ -23,6 +25,14 @@
 				<configuration>
 					<release>11</release>
 				</configuration>
+			</plugin>
+
+			<!-- update to higher version than default, otherwise
+			packaging modules will not work -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>3.1.1</version>
 			</plugin>
 		</plugins>
 	</build>
