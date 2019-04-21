@@ -13,6 +13,7 @@
 		<module>aacl-01-own-classloader</module>
 		<module>aacl-02-delegationmodelbreaking-classloader</module>
         <module>aacl-03-moduleisolation</module>
+        <module>aacl-04-shadingexample</module>
         <module>aacl-0X-javaagent</module>
     </modules>
 
