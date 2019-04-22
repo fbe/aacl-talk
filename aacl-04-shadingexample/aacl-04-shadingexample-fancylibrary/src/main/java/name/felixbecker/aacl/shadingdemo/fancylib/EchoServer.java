@@ -25,12 +25,13 @@ public class EchoServer implements Runnable {
                         .option(ChannelOption.SO_BACKLOG, 100)
                         .handler(new LoggingHandler(LogLevel.INFO))
                         .childHandler(new ChannelInitializer<SocketChannel>() {
-                            @Override
-                            public void initChannel(SocketChannel ch) throws Exception {
-                                ChannelPipeline p = ch.pipeline();
-                                p.addLast(serverHandler);
-                            }
-                        });
+                   @Override
+                   public void initChannel(SocketChannel ch) throws Exception {
+                                                      ChannelPipeline p = ch.pipeline();
+                                                       //p.addLast(new LoggingHandler(LogLevel.INFO));
+                                                       p.addLast(serverHandler);
+                                                   }
+               });
 
                 ChannelFuture f = b.bind(PORT).sync();
 
