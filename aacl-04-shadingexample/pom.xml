@@ -6,7 +6,8 @@
 	<modelVersion>4.0.0</modelVersion>
 	<modules>
 		<module>aacl-04-shadingexample-fancylibrary</module>
-	</modules>
+        <module>aacl-04-shadingexample-cassandradriver</module>
+    </modules>
 	<parent>
 		<groupId>name.felixbecker.aacl</groupId>
 		<artifactId>aacl-aggregator</artifactId>

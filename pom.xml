@@ -15,6 +15,7 @@
         <module>aacl-03-moduleisolation</module>
         <module>aacl-04-shadingexample</module>
         <module>aacl-0X-javaagent</module>
+        <module>notes</module>
     </modules>
 
 	<build>
