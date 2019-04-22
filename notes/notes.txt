@@ -1,0 +1,10 @@
+
+
+=== AACL 04 - Shading ===
+io.netty.util.internal.NativeLibraryLoader.TRY_TO_PATCH_SHADED_ID
+
+private static boolean shouldShadedLibraryIdBePatched(String packagePrefix) {
+    return TRY_TO_PATCH_SHADED_ID && PlatformDependent.isOsx() && !packagePrefix.isEmpty();
+}
+
+Lol Whut?
