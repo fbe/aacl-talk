@@ -9,7 +9,7 @@ import static org.objectweb.asm.Opcodes.*;
 public class SyntheticClassGenerator {
 	public static byte[] generateClass(String name) {
 		final ClassWriter classWriter = new ClassWriter(0); // FIXME
-		classWriter.visit(V12, ACC_PUBLIC, name.replaceAll("\\.", "/"), null, "java/lang/Object", null);
+		classWriter.visit(V11, ACC_PUBLIC, name.replaceAll("\\.", "/"), null, "java/lang/Object", null);
 		
 		final MethodVisitor constructorMethodVisitor = classWriter.visitMethod(ACC_PUBLIC, "<init>", "()V", null, null);
 		constructorMethodVisitor.visitMaxs(2, 1);

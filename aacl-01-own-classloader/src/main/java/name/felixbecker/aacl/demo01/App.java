@@ -15,7 +15,8 @@ public class App
 
 
         System.out.println(customClass);
-        
+
+        System.out.println(stringClass.getClassLoader());
     }
     
     // Demo own classloader which loads class from resource
