@@ -10,3 +10,6 @@ private static boolean shouldShadedLibraryIdBePatched(String packagePrefix) {
 
 Lol Whut?
 
+
+Class.forName() breaks isolation
+Own module for each class loader
