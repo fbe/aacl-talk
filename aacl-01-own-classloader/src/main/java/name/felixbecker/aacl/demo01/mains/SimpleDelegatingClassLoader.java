@@ -1,10 +1,8 @@
-package name.felixbecker.aacl.demo01;
+package name.felixbecker.aacl.demo01.mains;
 
-import java.util.Arrays;
-import java.util.function.IntConsumer;
-import java.util.stream.IntStream;
+import name.felixbecker.aacl.demo01.classloader.OwnDelegatingClassLoader;
 
-public class App
+public class SimpleDelegatingClassLoader
 {
     public static void main( String[] args ) throws ClassNotFoundException
     {

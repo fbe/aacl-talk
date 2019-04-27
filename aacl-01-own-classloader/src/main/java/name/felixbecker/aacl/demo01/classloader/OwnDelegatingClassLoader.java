@@ -1,4 +1,4 @@
-package name.felixbecker.aacl.demo01;
+package name.felixbecker.aacl.demo01.classloader;
 
 import name.felixbecker.aacl.demo01.classgenerator.BrokenClassGenerator;
 import name.felixbecker.aacl.demo01.classgenerator.SyntheticClassGenerator;
