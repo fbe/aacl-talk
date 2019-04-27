@@ -7,11 +7,10 @@
 
 \usetheme{Warsaw}  %% Themenwahl
  
-\title{All about class loading}
+\title{All about class loading (JAX Preview)}
 \author{Felix Becker}
 \date{\today}
 \institute{REWE Systems}
-
 
 
 \definecolor{javared}{rgb}{0.6,0,0} % for strings
@@ -69,7 +68,7 @@
 \subsection{Class startup life cycle}
 
 \begin{frame}
-	\frametitle{Startup life cycle einer Javaklasse (JVM Spec §12.1.2)}
+	\frametitle{Startup life cycle of a class (Java 11 lang spec)}
 	\begin{enumerate}
 		\item{Loading §12.2.1}
 			\begin{itemize}
@@ -77,7 +76,7 @@
 			\end{itemize}
 		\item{Verify §12.3.1}
 			\begin{itemize}
-				\item{Validierung der Klassenstruktur / Daten (Opcodes gültig, branch instructions check, signature check, ...)}
+				\item{Validation of the class structure / op codes / method signatures, ...)}
 			\end{itemize}
 		\item{Prepare §12.3.2}
 			\begin{itemize}

@@ -1,4 +1,4 @@
-package name.felixbecker.aacl.demo01;
+package name.felixbecker.aacl.demo01.classgenerator;
 
 import org.objectweb.asm.ClassWriter;
 import org.objectweb.asm.MethodVisitor;
@@ -7,6 +7,7 @@ import org.objectweb.asm.Type;
 import static org.objectweb.asm.Opcodes.*;
 
 public class SyntheticClassGenerator {
+
 	public static byte[] generateClass(String name) {
 		final ClassWriter classWriter = new ClassWriter(0); // FIXME
 		classWriter.visit(V11, ACC_PUBLIC, name.replaceAll("\\.", "/"), null, "java/lang/Object", null);
