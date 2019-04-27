@@ -28,9 +28,9 @@ public class EchoServerHandler extends ChannelInboundHandlerAdapter {
             e.printStackTrace();
         }
 
-        var buf = Unpooled.wrappedBuffer(((String)msg).getBytes());
+        var buf = Unpooled.wrappedBuffer(((String) msg).getBytes());
         var f = ctx.writeAndFlush(buf);
-        if(!f.isSuccess()){
+        if (!f.isSuccess()) {
             f.cause().printStackTrace();
         }
     }
@@ -47,7 +47,7 @@ public class EchoServerHandler extends ChannelInboundHandlerAdapter {
         ctx.close();
     }
 
-    public List<String> getEchos(){
+    public List<String> getEchos() {
         return new ArrayList<>(echos);
     }
 }
