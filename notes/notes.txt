@@ -13,3 +13,8 @@ Lol Whut?
 
 Class.forName() breaks isolation
 Own module for each class loader
+
+
+# class loader contains unnamed module!
+
+class forname initializes, but does reflection do that too?

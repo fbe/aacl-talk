@@ -10,13 +10,12 @@ import io.netty.handler.logging.LoggingHandler;
 import org.apache.log4j.BasicConfigurator;
 
 public class EchoServer implements Runnable {
-    static final int PORT = Integer.parseInt(System.getProperty("port", "8007"));
 
     public void run() {
 
         try {
-            EventLoopGroup bossGroup = new EpollEventLoopGroup(1);
-            EventLoopGroup workerGroup = new EpollEventLoopGroup();
+            final EventLoopGroup bossGroup = new EpollEventLoopGroup(1);
+            final EventLoopGroup workerGroup = new EpollEventLoopGroup();
             final EchoServerHandler serverHandler = new EchoServerHandler();
             try {
                 ServerBootstrap b = new ServerBootstrap();
@@ -33,7 +32,7 @@ public class EchoServer implements Runnable {
                                                    }
                });
 
-                ChannelFuture f = b.bind(PORT).sync();
+                ChannelFuture f = b.bind(4711).sync();
 
                 f.channel().closeFuture().sync();
             } finally {

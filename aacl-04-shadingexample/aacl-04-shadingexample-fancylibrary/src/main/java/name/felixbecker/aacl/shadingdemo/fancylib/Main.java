@@ -10,16 +10,7 @@ public class Main {
         System.setProperty("io.netty.native.deleteLibAfterLoading", "false");
         BasicConfigurator.configure();
         Logger.getRootLogger().setLevel(Level.DEBUG);
-
-        final Thread t1 = new Thread(new EchoServer());
-        final Thread t2 = new Thread(new EchoClient());
-
-        t1.setDaemon(false);
-        t2.setDaemon(false);
-
-        t1.start();
-        t2.start();
-
+        new EchoServer();
 
     }
 

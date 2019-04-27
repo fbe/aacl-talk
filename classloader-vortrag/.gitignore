@@ -11,3 +11,5 @@ classloadervortrag.toc
 classloadervortrag.vrb
 classloader-vortrag-javademos/classloadervortrag-javademos.iml
 *.swp
+texput.log
+classloadervortrag.pdf
