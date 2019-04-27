@@ -1,22 +1,32 @@
-package name.felixbecker.aacl.shadingdemo.fancylib;
+package name.felixbecker.aacl.shadingdemo.fancylib.bad;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.*;
 import io.netty.channel.epoll.EpollEventLoopGroup;
 import io.netty.channel.epoll.EpollServerSocketChannel;
 import io.netty.channel.socket.SocketChannel;
+import io.netty.handler.codec.string.StringDecoder;
 import io.netty.handler.logging.LogLevel;
 import io.netty.handler.logging.LoggingHandler;
-import org.apache.log4j.BasicConfigurator;
+
+import java.nio.charset.Charset;
+import java.util.Queue;
+import java.util.concurrent.ArrayBlockingQueue;
 
 public class EchoServer implements Runnable {
+
+    private final ArrayBlockingQueue<String> echos = new ArrayBlockingQueue<>(100);
+
+    public ArrayBlockingQueue<String> getEchos() {
+        return echos;
+    }
 
     public void run() {
 
         try {
-            final EventLoopGroup bossGroup = new EpollEventLoopGroup(1);
-            final EventLoopGroup workerGroup = new EpollEventLoopGroup();
-            final EchoServerHandler serverHandler = new EchoServerHandler();
+            final var bossGroup = new EpollEventLoopGroup(1);
+            final var workerGroup = new EpollEventLoopGroup();
+            final EchoServerHandler serverHandler = new EchoServerHandler(echos);
             try {
                 ServerBootstrap b = new ServerBootstrap();
                 b.group(bossGroup, workerGroup)
@@ -24,29 +34,25 @@ public class EchoServer implements Runnable {
                         .option(ChannelOption.SO_BACKLOG, 100)
                         .handler(new LoggingHandler(LogLevel.INFO))
                         .childHandler(new ChannelInitializer<SocketChannel>() {
-                   @Override
-                   public void initChannel(SocketChannel ch) throws Exception {
-                                                      ChannelPipeline p = ch.pipeline();
-                                                       //p.addLast(new LoggingHandler(LogLevel.INFO));
-                                                       p.addLast(serverHandler);
-                                                   }
-               });
+                            @Override
+                            public void initChannel(SocketChannel ch) throws Exception {
+                                ChannelPipeline p = ch.pipeline();
+                                p.addLast(new StringDecoder(Charset.defaultCharset()))
+                                        .addLast(serverHandler);
+                            }
+                        });
 
+                System.err.println("Binding to port 4711");
                 ChannelFuture f = b.bind(4711).sync();
 
                 f.channel().closeFuture().sync();
             } finally {
-                // Shut down all event loops to terminate all threads.
                 bossGroup.shutdownGracefully();
                 workerGroup.shutdownGracefully();
             }
-        } catch(Exception e){
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
-    }
-
-    public static void main(String[] args) throws Exception {
-        new EchoServer().run();
     }
 
 }

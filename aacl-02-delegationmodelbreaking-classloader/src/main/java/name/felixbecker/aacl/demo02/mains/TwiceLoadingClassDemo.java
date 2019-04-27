@@ -16,9 +16,9 @@ public class TwiceLoadingClassDemo {
 				TwiceLoadingClassDemo.class.getProtectionDomain().getCodeSource().getLocation()
 		}, TwiceLoadingClassDemo.class.getClassLoader());
 
-		Object testClazz = classLoader.loadClass(TestClass.class.getCanonicalName()).getConstructor().newInstance();
+		var testClazz = classLoader.loadClass(TestClass.class.getCanonicalName()).getConstructor().newInstance();
 
-		TestClass testClass2 = (TestClass) testClazz;
+		var testClass2 = (TestClass) testClazz;
 	}
 
 }
