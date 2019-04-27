@@ -1,5 +1,6 @@
-package name.felixbecker.aacl.shadingdemo.fancylib.bad;
+package name.felixbecker.aacl.shadingdemo.notsofancylibrary.client;
 
+import name.felixbecker.aacl.shadingdemo.fancylib.bad.EchoServer;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
