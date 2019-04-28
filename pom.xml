@@ -16,6 +16,7 @@
         <module>aacl-04-shadingexample</module>
         <module>aacl-0X-javaagent</module>
         <module>notes</module>
+        <module>aacl-0X-hibernate-contextcl</module>
     </modules>
 
     <properties>
