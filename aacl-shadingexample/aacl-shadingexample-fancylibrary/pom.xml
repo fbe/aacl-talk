@@ -10,10 +10,10 @@
 
     <packaging>pom</packaging>
     <modules>
-        <module>aacl-04-shadingexample-fancylibrary-api</module>
-        <module>aacl-04-shadingexample-fancylibrary-impl</module>
-        <module>aacl-04-shadingexample-fancylibrary-client</module>
-        <module>aacl-04-shadingexample-fancylibrary-loader</module>
+        <module>aacl-shadingexample-fancylibrary-api</module>
+        <module>aacl-shadingexample-fancylibrary-impl</module>
+        <module>aacl-shadingexample-fancylibrary-client</module>
+        <module>aacl-shadingexample-fancylibrary-loader</module>
     </modules>
     <modelVersion>4.0.0</modelVersion>
 
