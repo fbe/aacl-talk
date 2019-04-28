@@ -10,7 +10,7 @@
 		<version>1.0.0-SNAPSHOT</version>
 	</parent>
 	<groupId>name.felixbecker.aacl</groupId>
-	<artifactId>aacl-01-own-classloader</artifactId>
+	<artifactId>aacl-own-classloader</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<name>aacl-01-own-classloader</name>
 	<url>http://maven.apache.org</url>

@@ -17,6 +17,6 @@
     <packaging>pom</packaging>
     <artifactId>aacl-shadingexample</artifactId>
     <version>1.0.0-SNAPSHOT</version>
-    <name>aacl-04-shadingexample</name>
+    <name>aacl-shadingexample</name>
     <url>http://maven.apache.org</url>
 </project>

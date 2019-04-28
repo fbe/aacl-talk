@@ -3,23 +3,23 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>aacl-04-shadingexample-fancylibrary</artifactId>
+        <artifactId>aacl-shadingexample-fancylibrary</artifactId>
         <groupId>name.felixbecker.aacl</groupId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>aacl-04-shadingexample-fancylibrary-loader</artifactId>
+    <artifactId>aacl-shadingexample-fancylibrary-loader</artifactId>
 
     <dependencies>
         <dependency>
             <groupId>name.felixbecker.aacl</groupId>
-            <artifactId>aacl-04-shadingexample-fancylibrary-api</artifactId>
+            <artifactId>aacl-shadingexample-fancylibrary-api</artifactId>
             <version>1.0.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>name.felixbecker.aacl</groupId>
-            <artifactId>aacl-04-shadingexample-fancylibrary-impl</artifactId>
+            <artifactId>aacl-shadingexample-fancylibrary-impl</artifactId>
             <version>1.0.0-SNAPSHOT</version>
             <classifier>hidden-dependencies</classifier>
         </dependency>

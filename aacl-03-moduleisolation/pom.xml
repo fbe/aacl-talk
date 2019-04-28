@@ -14,7 +14,7 @@
         <module>module-a</module>
         <module>module-b</module>
     </modules>
-    <artifactId>aacl-03-moduleisolation</artifactId>
+    <artifactId>aacl-moduleisolation</artifactId>
 
 
 </project>
