@@ -23,3 +23,5 @@ class forname initializes, but does reflection do that too?
 
 # for slides:
     all classloader contain an own unnamed module - and if you don't use a module classloader its the default like classpath classes.
+
+# delegate to maven in build options
