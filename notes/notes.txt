@@ -12,17 +12,6 @@ Lol Whut?
 
 
 Class.forName() breaks isolation
-Own module for each class loader
-
-
-# class loader contains unnamed module!
-
-class forname initializes, but does reflection do that too?
-
-# demo mit noverify und jvm check?
-
-# for slides:
-    all classloader contain an own unnamed module - and if you don't use a module classloader its the default like classpath classes.
 
 # delegate to maven in build options
 
