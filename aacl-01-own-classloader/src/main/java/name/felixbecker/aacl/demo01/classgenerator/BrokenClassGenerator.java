@@ -47,13 +47,7 @@ public class BrokenClassGenerator {
 
 		if(damageType == DamageType.BYTE_FLIP) {
 			final Random random = new Random();
-
-
-
-
 			int byteToPatch = random.nextInt(result.length);
-
-
 			System.err.println("Patching byte "+byteToPatch+": (" + String.format("%02x", result[byteToPatch]) + ")");
 			result[byteToPatch] = (byte)(~result[byteToPatch]);
 			System.err.println("Patched byte "+byteToPatch+": (" + String.format("%02x", result[byteToPatch]) + ")");

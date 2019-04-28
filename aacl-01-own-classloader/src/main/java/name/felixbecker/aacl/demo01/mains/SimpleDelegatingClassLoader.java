@@ -16,7 +16,7 @@ public class SimpleDelegatingClassLoader
         System.out.println(stringClass.getClassLoader());
         System.out.println(Class.forName("java.lang.String", true, classLoader).getClassLoader());
 
-
+        // static initializer
     }
     
     // Demo own classloader which loads class from resource

@@ -16,12 +16,13 @@ public class Main {
             "aacl-0x-hibernate-contextcl-plugin",
             "1.0.0-SNAPSHOT",
             "aacl-0x-hibernate-contextcl-plugin-1.0.0-SNAPSHOT.jar");
+    final static String pluginClassName = "name.felixbecker.aacl.hibernate.contextcl.plugin.entities.MyFancyPlugin";
 
     // This is the application server, we have hibernate
     public static void main(String... args) throws Exception {
 
         final var pluginClassLoader = new URLClassLoader(new URL[]{ pluginPath.toUri().toURL()}, Main.class.getClassLoader());
-        Class<?> pluginClass = pluginClassLoader.loadClass("name.felixbecker.aacl.hibernate.contextcl.plugin.entities.MyFancyPlugin");
+        Class<?> pluginClass = pluginClassLoader.loadClass("");
         Thread.currentThread().setContextClassLoader(pluginClassLoader);
         final var plugin = pluginClass.getConstructor().newInstance();
         pluginClass.getDeclaredMethod("start").invoke(plugin);
