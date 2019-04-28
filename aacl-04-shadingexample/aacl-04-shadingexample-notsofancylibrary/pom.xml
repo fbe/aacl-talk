@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>aacl-04-shadingexample-notsofancylibrary</artifactId>
+    <artifactId>aacl-shadingexample-notsofancylibrary</artifactId>
 
     <properties>
         <netty.version>4.1.35.Final</netty.version>

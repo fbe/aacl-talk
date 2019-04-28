@@ -15,7 +15,7 @@
         <version>1.0.0-SNAPSHOT</version>
     </parent>
     <packaging>pom</packaging>
-    <artifactId>aacl-04-shadingexample</artifactId>
+    <artifactId>aacl-shadingexample</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <name>aacl-04-shadingexample</name>
     <url>http://maven.apache.org</url>

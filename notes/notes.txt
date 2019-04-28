@@ -26,7 +26,6 @@ class forname initializes, but does reflection do that too?
 
 # delegate to maven in build options
 
-//0) Ein wort zu modules: wir sind im module system und können über auto modules alles tun
 1) Delegierende Classloader implementieren (mit synthetischen klassen, das coole byte array oder ASM) (Bild nötig cl hierachie)
 2) Delegation Model brechende Classloader implementieren (+ twice loading + cast error)
 3) Hibernate Plugin Example (Context Class Loader) (Bild nötig)
