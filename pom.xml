@@ -10,14 +10,14 @@
     <name>All about class loading - Aggregator</name>
     <description>All about class loading - talk demos - aggregator pom</description>
     <modules>
-        <module>aacl-01-own-classloader</module>
-        <module>aacl-02-delegationmodelbreaking-classloader</module>
-        <module>aacl-03-moduleisolation</module>
-        <module>aacl-04-shadingexample</module>
-        <module>aacl-0X-javaagent</module>
+        <module>aacl-own-classloader</module>
+        <module>aacl-delegationmodelbreaking-classloader</module>
+        <module>aacl-moduleisolation</module>
+        <module>aacl-shadingexample</module>
+        <module>aacl-javaagent</module>
         <module>notes</module>
-        <module>aacl-0X-hibernate-contextcl</module>
-	<module>aacl-0x-springbootexample</module>
+        <module>aacl-hibernate-contextcl</module>
+	<module>aacl-springbootexample</module>
     </modules>
 
     <properties>
