@@ -35,3 +35,8 @@ Optional:
 5) Klassen Initialisierungsphasen in define class Class -noverify kaputt machen
 6) JVM TI: Redefine classes (crack license)
 7) Module Isolation brechen ?
+
+1.0) Classloader allgemeine Worte, Bild, delegationsmodell
+1.1) URLClassLoader schreiben
+1.2) Erklären was da passiert (findClass, loadClass)
+1.3) Synthetische Klasse laden (mit neuem ClassLoader)
