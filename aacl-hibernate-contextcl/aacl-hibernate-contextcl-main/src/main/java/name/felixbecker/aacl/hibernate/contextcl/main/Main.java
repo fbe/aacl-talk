@@ -13,9 +13,9 @@ public class Main {
             "name",
             "felixbecker",
             "aacl",
-            "aacl-0x-hibernate-contextcl-plugin",
+            "aacl-hibernate-contextcl-plugin",
             "1.0.0-SNAPSHOT",
-            "aacl-0x-hibernate-contextcl-plugin-1.0.0-SNAPSHOT.jar");
+            "aacl-hibernate-contextcl-plugin-1.0.0-SNAPSHOT.jar");
     final static String pluginClassName = "name.felixbecker.aacl.hibernate.contextcl.plugin.entities.MyFancyPlugin";
 
     // This is the application server, we have hibernate

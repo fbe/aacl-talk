@@ -11,7 +11,7 @@
 	<groupId>name.felixbecker.aacl</groupId>
 	<artifactId>aacl-springbootexample</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>aacl-0x-springbootexample</name>
+	<name>aacl-springbootexample</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>

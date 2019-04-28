@@ -11,7 +11,7 @@ public class BClass {
         ModuleAService aclass = new ModuleAService();
         aclass.greet("Felix");
 
-        final ClassLoader cl = new URLClassLoader(new URL[] { new URL("file:///home/becker/git/aacl-talk/aacl-03-moduleisolation/module-a/target/module-a-1.0.0-SNAPSHOT.jar")}){
+        final ClassLoader cl = new URLClassLoader(new URL[] { new URL("file:///home/becker/git/aacl-talk/aacl-moduleisolation/module-a/target/module-a-1.0.0-SNAPSHOT.jar")}){
             void log(String msg){
                 System.err.println("[LOG] " + msg);
             }
