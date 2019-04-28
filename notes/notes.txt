@@ -25,3 +25,13 @@ class forname initializes, but does reflection do that too?
     all classloader contain an own unnamed module - and if you don't use a module classloader its the default like classpath classes.
 
 # delegate to maven in build options
+
+//0) Ein wort zu modules: wir sind im module system und können über auto modules alles tun
+1) Delegierende Classloader implementieren (mit synthetischen klassen, das coole byte array oder ASM) (Bild nötig cl hierachie)
+2) Delegation Model brechende Classloader implementieren (+ twice loading + cast error)
+3) Hibernate Plugin Example (Context Class Loader) (Bild nötig)
+4) Shading (Bild nötig) <- 1h
+Optional:
+5) Klassen Initialisierungsphasen in define class Class -noverify kaputt machen
+6) JVM TI: Redefine classes (crack license)
+7) Module Isolation brechen ?
