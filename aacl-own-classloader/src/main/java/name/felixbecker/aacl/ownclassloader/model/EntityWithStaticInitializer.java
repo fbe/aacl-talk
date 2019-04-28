@@ -1,4 +1,4 @@
-package name.felixbecker.aacl.demo01.model;
+package name.felixbecker.aacl.ownclassloader.model;
 
 public class EntityWithStaticInitializer {
     

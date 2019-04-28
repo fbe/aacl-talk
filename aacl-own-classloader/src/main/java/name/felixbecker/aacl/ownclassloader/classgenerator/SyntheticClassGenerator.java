@@ -1,4 +1,4 @@
-package name.felixbecker.aacl.demo01.classgenerator;
+package name.felixbecker.aacl.ownclassloader.classgenerator;
 
 import org.objectweb.asm.ClassWriter;
 import org.objectweb.asm.MethodVisitor;

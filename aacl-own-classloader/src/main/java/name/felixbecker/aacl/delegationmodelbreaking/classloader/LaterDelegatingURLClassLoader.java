@@ -1,4 +1,4 @@
-package name.felixbecker.aacl.demo02.classloader;
+package name.felixbecker.aacl.delegationmodelbreaking.classloader;
 
 import java.net.URL;
 import java.net.URLClassLoader;
@@ -8,6 +8,10 @@ public class LaterDelegatingURLClassLoader extends URLClassLoader {
 
 	public LaterDelegatingURLClassLoader(URL[] urls, ClassLoader parent) {
 		super(urls, parent);
+	}
+
+	public void loadClass(String name, byte[] bytes){
+		defineClass(name, bytes, 0, bytes.length);
 	}
 
 	protected Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException {

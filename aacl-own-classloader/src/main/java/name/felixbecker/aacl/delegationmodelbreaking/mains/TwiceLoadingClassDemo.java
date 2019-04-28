@@ -1,7 +1,7 @@
-package name.felixbecker.aacl.demo02.mains;
+package name.felixbecker.aacl.delegationmodelbreaking.mains;
 
-import name.felixbecker.aacl.demo02.model.TestClass;
-import name.felixbecker.aacl.demo02.classloader.LaterDelegatingURLClassLoader;
+import name.felixbecker.aacl.delegationmodelbreaking.classloader.LaterDelegatingURLClassLoader;
+import name.felixbecker.aacl.delegationmodelbreaking.model.TestClass;
 
 import java.net.URL;
 
@@ -12,12 +12,11 @@ public class TwiceLoadingClassDemo {
 
 		final TestClass testClass = new TestClass();
 
-		final LaterDelegatingURLClassLoader classLoader = new LaterDelegatingURLClassLoader(new URL[]{
+		final var classLoader = new LaterDelegatingURLClassLoader(new URL[]{
 				TwiceLoadingClassDemo.class.getProtectionDomain().getCodeSource().getLocation()
 		}, TwiceLoadingClassDemo.class.getClassLoader());
 
 		var testClazz = classLoader.loadClass(TestClass.class.getCanonicalName()).getConstructor().newInstance();
-
 		var testClass2 = (TestClass) testClazz;
 	}
 

@@ -1,9 +1,8 @@
-package name.felixbecker.aacl.demo02.mains;
+package name.felixbecker.aacl.delegationmodelbreaking.mains;
 
-import name.felixbecker.aacl.demo02.model.TestClass;
-import name.felixbecker.aacl.demo02.classloader.LaterDelegatingURLClassLoader;
+import name.felixbecker.aacl.delegationmodelbreaking.classloader.LaterDelegatingURLClassLoader;
+import name.felixbecker.aacl.delegationmodelbreaking.model.TestClass;
 
-import java.lang.reflect.Field;
 import java.net.URL;
 import java.util.stream.Stream;
 
@@ -21,20 +20,11 @@ public class InitializationDemo {
 
 		System.err.println("loadClass");
 		var cl3 = createClassLoader().loadClass(testClassFqdn);
-
-		System.err.println("Reflecting getDeclared methods");
 		var methods = cl3.getDeclaredMethods();
-
-		System.err.println("Reflecting getDeclaredFields");
 		var fields = cl3.getDeclaredFields();
 		Stream.of(fields).forEach(System.err::println);
-
-		System.err.println("getDeclaredFields");
 		var f1 = cl3.getDeclaredFields()[0];
-
-		System.err.println("field.setAccessible(true)");
 		f1.setAccessible(true);
-
 		System.err.println("field.get(null)");
 		f1.get(null);
 	}

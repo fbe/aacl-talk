@@ -1,4 +1,4 @@
-package name.felixbecker.aacl.demo02.model;
+package name.felixbecker.aacl.delegationmodelbreaking.model;
 
 public class TestClass {
 

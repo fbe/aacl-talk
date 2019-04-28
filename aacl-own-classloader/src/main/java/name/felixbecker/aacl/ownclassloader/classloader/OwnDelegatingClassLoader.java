@@ -1,7 +1,7 @@
-package name.felixbecker.aacl.demo01.classloader;
+package name.felixbecker.aacl.ownclassloader.classloader;
 
-import name.felixbecker.aacl.demo01.classgenerator.BrokenClassGenerator;
-import name.felixbecker.aacl.demo01.classgenerator.SyntheticClassGenerator;
+import name.felixbecker.aacl.ownclassloader.classgenerator.BrokenClassGenerator;
+import name.felixbecker.aacl.ownclassloader.classgenerator.SyntheticClassGenerator;
 
 public class OwnDelegatingClassLoader extends ClassLoader {
 	

@@ -1,7 +1,7 @@
-package name.felixbecker.aacl.demo01.mains;
+package name.felixbecker.aacl.ownclassloader.mains.verifydemos;
 
-import name.felixbecker.aacl.demo01.classloader.OwnDelegatingClassLoader;
-import name.felixbecker.aacl.demo01.classgenerator.BrokenClassGenerator;
+import name.felixbecker.aacl.ownclassloader.classloader.OwnDelegatingClassLoader;
+import name.felixbecker.aacl.ownclassloader.classgenerator.BrokenClassGenerator;
 
 public class ByteFlipDemo {
 

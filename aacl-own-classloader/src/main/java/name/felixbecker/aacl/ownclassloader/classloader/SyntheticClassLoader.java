@@ -1,4 +1,4 @@
-package name.felixbecker.aacl.demo01.classloader;
+package name.felixbecker.aacl.ownclassloader.classloader;
 
 public class SyntheticClassLoader extends ClassLoader {
 

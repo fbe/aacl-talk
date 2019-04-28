@@ -1,6 +1,6 @@
-package name.felixbecker.aacl.demo01.mains;
+package name.felixbecker.aacl.ownclassloader.mains;
 
-import name.felixbecker.aacl.demo01.classloader.OwnDelegatingClassLoader;
+import name.felixbecker.aacl.ownclassloader.classloader.OwnDelegatingClassLoader;
 
 public class SimpleDelegatingClassLoader
 {
@@ -15,7 +15,7 @@ public class SimpleDelegatingClassLoader
         System.out.println(customClass);
         System.out.println(stringClass.getClassLoader());
         System.out.println(Class.forName("java.lang.String", true, classLoader).getClassLoader());
-
+        System.out.println("Hello WOrld");
         // static initializer
     }
     
