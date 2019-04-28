@@ -11,8 +11,8 @@
 
     <packaging>pom</packaging>
     <modules>
-        <module>aacl-0x-hibernate-contextcl-main</module>
-        <module>aacl-0x-hibernate-contextcl-plugin</module>
+        <module>aacl-hibernate-contextcl-main</module>
+        <module>aacl-hibernate-contextcl-plugin</module>
     </modules>
 
     <artifactId>aacl-hibernate-contextcl</artifactId>
