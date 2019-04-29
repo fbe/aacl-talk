@@ -20,6 +20,19 @@ public class Main {
 
     // This is the application server, we have hibernate
     public static void main(String... args) throws Exception {
+        var jarLocation = pluginPath.toUri().toURL();
+        var myCl = Main.class.getClassLoader();
+        var cl = new URLClassLoader(new URL[]{jarLocation}, myCl);
+
+        var pluginClazz = cl.loadClass(pluginClassName);
+
+        System.out.println(pluginClazz);
+
+        var instance = pluginClazz.getConstructor().newInstance();
+        System.out.println(instance);
+
+        Thread.currentThread().setContextClassLoader(cl);
+        pluginClazz.getDeclaredMethod("start").invoke(instance);
 
     }
 }

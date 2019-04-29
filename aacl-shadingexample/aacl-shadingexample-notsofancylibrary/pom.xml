@@ -29,7 +29,6 @@
         </dependency>
     </dependencies>
 
-    <!--
     <build>
         <plugins>
             <plugin>
@@ -61,7 +60,11 @@
                     <shadedArtifactAttached>true</shadedArtifactAttached>
                 </configuration>
             </plugin>
+        </plugins>
+    </build>
 
+
+            <!--
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
