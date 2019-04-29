@@ -15,9 +15,9 @@ import java.util.concurrent.ArrayBlockingQueue;
 
 public class EchoServer implements Runnable {
 
-    private final ArrayBlockingQueue<String> echos = new ArrayBlockingQueue<>(100);
+    private final ArrayBlockingQueue<Echo> echos = new ArrayBlockingQueue<>(100);
 
-    public ArrayBlockingQueue<String> getEchos() {
+    public ArrayBlockingQueue<Echo> getEchos() {
         return echos;
     }
 

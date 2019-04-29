@@ -21,7 +21,8 @@ public class Main {
             public void run() {
                 while(true) {
                     try {
-                        System.out.print(echoServer.getEchos().take());
+                        var nextEcho = echoServer.getEchos().take();
+                        System.out.print(nextEcho.getEchoDate() + ": " + nextEcho.getEchoValue());
                     } catch (InterruptedException e) {
                         break;
                     }

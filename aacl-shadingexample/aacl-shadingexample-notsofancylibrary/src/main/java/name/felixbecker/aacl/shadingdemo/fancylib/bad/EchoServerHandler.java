@@ -6,6 +6,7 @@ import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.ConcurrentLinkedQueue;
@@ -14,16 +15,16 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 public class EchoServerHandler extends ChannelInboundHandlerAdapter {
 
 
-    private final ArrayBlockingQueue<String> echos;
+    private final ArrayBlockingQueue<Echo> echos;
 
-    public EchoServerHandler(ArrayBlockingQueue<String> echos) {
+    public EchoServerHandler(ArrayBlockingQueue<Echo> echos) {
         this.echos = echos;
     }
 
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) {
         try {
-            echos.put(msg.toString());
+            echos.put(new Echo(msg.toString(), new Date()));
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -47,7 +48,7 @@ public class EchoServerHandler extends ChannelInboundHandlerAdapter {
         ctx.close();
     }
 
-    public List<String> getEchos() {
+    public List<Echo> getEchos() {
         return new ArrayList<>(echos);
     }
 }
