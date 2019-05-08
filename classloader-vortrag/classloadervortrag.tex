@@ -1,17 +1,15 @@
 \documentclass[aspectratio=169]{beamer}
-\usepackage{ngerman}
 \usepackage[utf8]{inputenc} 
-
 
 \usepackage{listings}
 \usepackage{color}
 
 \usetheme{Boadilla}  %% Themenwahl
  
-\title{Classloading in Action (JAX Preview)}
+\title{Classloading in Action}
 \author{Felix Becker}
 \date{\today}
-\institute{REWE Systems}
+\institute{JAX 2019}
 
 
 \definecolor{javared}{rgb}{0.6,0,0} % for strings
@@ -37,11 +35,54 @@
 \begin{document}
 \maketitle
 
+
 \section{Basics}
 
 \begin{frame}
 	\frametitle{Agenda}
 	\tableofcontents
+\end{frame}
+
+\begin{frame}
+	\frametitle{About me}
+		\begin{minipage}[t]{0.48\linewidth}
+		\begin{itemize}
+		\item{Felix Becker}
+		\item{Working at REWE Systems in Cologne}
+		\item{Specialized in Linux, high availability, high security and high performance}
+		\end{itemize}
+		\end{minipage}
+		\hfill
+		\begin{minipage}[t]{0.48\linewidth}
+		\includegraphics[scale=0.2]{assets/rewesyslogo.jpg}
+	\end{minipage}
+\end{frame}
+
+\begin{frame}
+	\frametitle{About me}
+
+\begin{columns}
+    \begin{column}{0.48\textwidth}
+		\begin{itemize}
+		\item{Felix Becker}
+		\item{Working at REWE Systems in Cologne}
+		\item{Specialized in Linux, high availability, high security and high performance}
+		\end{itemize}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+		\includegraphics[scale=0.2]{assets/rewesyslogo.jpg}
+    \end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Motivation}
+	\begin{itemize}
+		\item{Classloaders help you to modularize your application}
+		\item{Core technology of Java}
+		\item{Heavy usage in bigger applications}
+		\item{Necessary to reduce dependency hell problems (and to avoid solutions like shading+relocating)}
+	\end{itemize}
 \end{frame}
 
 \begin{frame}
