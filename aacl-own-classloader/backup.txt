@@ -80,3 +80,47 @@ public class LaterDelegatingURLClassLoader extends URLClassLoader {
 		}
 	}
 }
+
+
+====
+package name.felixbecker.aacl.ownclassloader.mains;
+
+import name.felixbecker.aacl.ownclassloader.classloader.SyntheticGreeterClassLoader;
+
+public class SyntheticGreeterClass {
+    public static void main(String... args) throws Exception {
+        var loader = new SyntheticGreeterClassLoader();
+        loader.createSyntheticGreeterClass().getConstructor().newInstance();
+    }
+}
+
+===
+package name.felixbecker.aacl.ownclassloader.classloader;
+
+import name.felixbecker.aacl.ownclassloader.classgenerator.SyntheticClassGenerator;
+
+public class SyntheticDynamicNameClassLoader extends ClassLoader {
+    public Class<?> createClass(String name) throws Exception {
+        var bytes = SyntheticClassGenerator.generateClass(name);
+        return defineClass(name, bytes, 0, bytes.length);
+    }
+}
+
+
+===
+package name.felixbecker.aacl.ownclassloader.mains;
+
+import name.felixbecker.aacl.ownclassloader.classloader.SyntheticDynamicNameClassLoader;
+
+public class JavaLangDefiningDemo {
+    public static void main(String... args) throws Exception {
+        var sncl = new SyntheticDynamicNameClassLoader();
+        var cl1 = sncl.createClass("foo");
+        var cl2 = sncl.createClass("foo2");
+
+        System.out.println(cl1.getCanonicalName());
+        System.out.println(cl2.getCanonicalName());
+
+        sncl.createClass("java.lang.Foobar");
+    }
+}
