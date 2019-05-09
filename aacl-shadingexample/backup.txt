@@ -1,0 +1,54 @@
+package name.felixbecker.aacl.shadingexample.fancylibrary.loader;
+
+import name.felixbecker.aacl.shadingexample.fancylibrary.api.EchoServer;
+
+import java.io.IOException;
+import java.net.URL;
+
+public class FancyLibLoader {
+
+    final String hiddenPrefix = "fancylib-impl";
+    public EchoServer createEchoServer(){
+
+        var cl = new ClassLoader(ClassLoader.getSystemClassLoader()){
+            @Override
+            public URL getResource(String name) {
+                var potentialResource = getParent().getResource(hiddenPrefix + "/" + name);
+                if(potentialResource == null){
+                    return getParent().getResource(name);
+                }
+
+                return potentialResource;
+            }
+
+            @Override
+            public Class<?> loadClass(String name) throws ClassNotFoundException {
+
+                var classResourceName = name.replaceAll("\\.", "/");
+                var resourceToLoad = hiddenPrefix + "/" + classResourceName + ".class";
+                System.out.println("Trying to load: " + resourceToLoad);
+                var classResource = getParent().getResourceAsStream(resourceToLoad);
+
+                if(classResource != null){
+                    try {
+                        var bytes = classResource.readAllBytes();
+                        return defineClass(name, bytes, 0, bytes.length);
+                    } catch (IOException e) {
+                       throw new RuntimeException(e);
+                    }
+                }
+
+                return super.loadClass(name);
+            }
+        };
+
+        try {
+            return (EchoServer) cl.loadClass("name.felixbecker.aacl.shadingexample.fancylibrary.impl.EchoServerImpl")
+                    .getConstructor().newInstance();
+        } catch(Exception e){
+            throw new RuntimeException(e);
+        }
+
+
+    }
+}
