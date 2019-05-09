@@ -76,31 +76,6 @@
 	\end{center}
 \end{frame}
 
-\begin{frame}
-	\frametitle{Startup life cycle of a class (Java 11 lang spec)}
-	\begin{enumerate}
-		\item{Loading §12.2.1}
-			\begin{itemize}
-				\item{Loading the byte code into the JVM using a class loader}
-			\end{itemize}
-		\item{Verify §12.3.1}
-			\begin{itemize}
-				\item{Validation of the class structure / op codes / method signatures, ...}
-			\end{itemize}
-		\item{Prepare §12.3.2}
-			\begin{itemize}
-				\item{Storage allocation, initialization of static field (default values, not static initializer!)}
-			\end{itemize}
-		\item{(Resolve §12.3.3)}
-			\begin{itemize}
-				\item{Symbolic link resolution (optional step, may be executed lazily)}
-			\end{itemize}
-		\item{Initialization §12.4.1}
-			\begin{itemize}
-				\item{Call static initializers, initialization of static fields}
-			\end{itemize}
-	\end{enumerate}
-\end{frame}
 
 \begin{frame}
 \frametitle{A word about modules...}
@@ -182,4 +157,33 @@
 
 \end{frame}
 
+\begin{frame}
+Backup slides / enough time slides
+\end{frame}
+
+\begin{frame}
+	\frametitle{Startup life cycle of a class (Java 11 lang spec)}
+	\begin{enumerate}
+		\item{Loading §12.2.1}
+			\begin{itemize}
+				\item{Loading the byte code into the JVM using a class loader}
+			\end{itemize}
+		\item{Verify §12.3.1}
+			\begin{itemize}
+				\item{Validation of the class structure / op codes / method signatures, ...}
+			\end{itemize}
+		\item{Prepare §12.3.2}
+			\begin{itemize}
+				\item{Storage allocation, initialization of static field (default values, not static initializer!)}
+			\end{itemize}
+		\item{(Resolve §12.3.3)}
+			\begin{itemize}
+				\item{Symbolic link resolution (optional step, may be executed lazily)}
+			\end{itemize}
+		\item{Initialization §12.4.1}
+			\begin{itemize}
+				\item{Call static initializers, initialization of static fields}
+			\end{itemize}
+	\end{enumerate}
+\end{frame}
 \end{document}
