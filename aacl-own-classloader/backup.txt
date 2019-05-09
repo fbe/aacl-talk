@@ -1,0 +1,82 @@
+== Basic Demo ==
+
+package name.felixbecker.aacl.ownclassloader.mains;
+
+import name.felixbecker.aacl.ownclassloader.classloader.LaterDelegatingURLClassLoader;
+
+import java.io.File;
+import java.net.URL;
+import java.net.URLClassLoader;
+
+public class BasicsMain
+{
+    final String testClassFQDN = "name.felixbecker.aacl.ownclassloader.model.TestClass";
+    final String platformClass = "java.sql.Driver";
+
+    public static void main( String[] args ) throws Exception {
+        var stringClazz = Class.forName("java.lang.String");
+        var driverClass = Class.forName("java.sql.Driver");
+        System.out.println(stringClazz.getClassLoader());
+        System.out.println(driverClass.getClassLoader());
+
+        var thisJar = BasicsMain.class.getProtectionDomain().getCodeSource().getLocation();
+        var urlCL = new URLClassLoader(new URL[]{thisJar}, ClassLoader.getPlatformClassLoader());
+        var basicsMainClass = urlCL.loadClass(BasicsMain.class.getCanonicalName());
+
+        System.out.println(basicsMainClass.getClassLoader());
+
+        var lcl = new LaterDelegatingURLClassLoader(new URL[]{thisJar}, ClassLoader.getSystemClassLoader());
+        var basicsMainClass2 = lcl.loadClass(BasicsMain.class.getCanonicalName());
+        System.out.println(basicsMainClass2.getClassLoader());
+
+        var instance = (BasicsMain) basicsMainClass2.getConstructor().newInstance();
+
+    }
+
+}
+
+
+
+==== Init Demo
+
+package name.felixbecker.aacl.ownclassloader.mains;
+
+public class InitializationDemo {
+
+	public static void main(String... args) throws Exception {
+		//InitializationDemo.class.getClassLoader().loadClass("name.felixbecker.aacl.ownclassloader.model.TestClass");
+		//Class.forName("name.felixbecker.aacl.ownclassloader.model.TestClass", true, ClassLoader.getSystemClassLoader());
+	}
+
+}
+
+
+=== Later Delegating CL ==
+package name.felixbecker.aacl.ownclassloader.classloader;
+
+import java.net.URL;
+import java.net.URLClassLoader;
+
+public class LaterDelegatingURLClassLoader extends URLClassLoader {
+
+	public LaterDelegatingURLClassLoader(URL[] urls, ClassLoader parent) {
+		super(urls, parent);
+	}
+
+	@Override
+	protected Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException {
+
+		var alreadyLoaded = findLoadedClass(name);
+
+		if(alreadyLoaded != null){
+			return alreadyLoaded;
+		}
+
+		try {
+			var clazz = findClass(name);
+			return clazz;
+		} catch(ClassNotFoundException e){
+			return super.loadClass(name, resolve);
+		}
+	}
+}
