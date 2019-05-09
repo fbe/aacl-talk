@@ -4,4 +4,7 @@ import name.felixbecker.aacl.ownclassloader.classgenerator.SyntheticClassGenerat
 
 public class SyntheticDynamicNameClassLoader extends ClassLoader {
 
+    public Class<?> generateClass(String name, byte[] classBytes){
+        return defineClass(name, classBytes, 0, classBytes.length);
+    }
 }
