@@ -1,6 +1,6 @@
 package name.felixbecker.aacl.ownclassloader.classloader;
 
-public class SyntheticClassLoader extends ClassLoader {
+public class SyntheticGreeterClassLoader extends ClassLoader {
 
     char[] greeterClassBytes = new char[]{
 
