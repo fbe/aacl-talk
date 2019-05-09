@@ -1,39 +1,22 @@
 \documentclass[aspectratio=169]{beamer}
-\usepackage{ngerman}
 \usepackage[utf8]{inputenc} 
-
 
 \usepackage{listings}
 \usepackage{color}
+\usepackage{amssymb}
 
 \usetheme{Boadilla}  %% Themenwahl
  
-\title{Classloading in Action (JAX Preview)}
+\title{Classloading in Action}
 \author{Felix Becker}
 \date{\today}
-\institute{REWE Systems}
-
+\institute{JAX 2019}
 
 \definecolor{javared}{rgb}{0.6,0,0} % for strings
 \definecolor{javagreen}{rgb}{0.25,0.5,0.35} % comments
 \definecolor{javapurple}{rgb}{0.5,0,0.35} % keywords
 \definecolor{javadocblue}{rgb}{0.25,0.35,0.75} % javadoc
  
- \lstset{language=Java,
- basicstyle=\tiny,
- keywordstyle=\color{javapurple}\bfseries,
- stringstyle=\color{javared},
- commentstyle=\color{javagreen},
- morecomment=[s][\color{javadocblue}]{/**}{*/},
- numbers=left,
- numberstyle=\tiny\color{black},
- stepnumber=1,
- numbersep=10pt,
- tabsize=2,
- xleftmargin=1cm,
- showspaces=false,
- showstringspaces=false}
-
 \begin{document}
 \maketitle
 
@@ -42,6 +25,36 @@
 \begin{frame}
 	\frametitle{Agenda}
 	\tableofcontents
+\end{frame}
+
+\begin{frame}
+	\frametitle{About me}
+
+\begin{columns}
+    \begin{column}{0.68\textwidth}
+		\begin{itemize}
+		\item{Felix Becker}
+		\item{Working at REWE Systems in Cologne (we are hiring!)}
+		\item{Developer, DevOps, Architect}
+		\end{itemize}
+    \end{column}
+    \begin{column}{0.28\textwidth}
+		\includegraphics[scale=0.03]{assets/profilfoto-freizeit.jpg}
+\\
+\bigskip
+		\includegraphics[scale=0.15]{assets/rewesyslogo.jpg}
+    \end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Motivation}
+	\begin{itemize}
+		\item{Classloaders help you to modularize your application}
+		\item{Core technology of Java}
+		\item{Heavy usage in bigger applications}
+		\item{Necessary to reduce dependency hell problems (and to avoid solutions like shading+relocating)}
+	\end{itemize}
 \end{frame}
 
 \begin{frame}
@@ -143,9 +156,27 @@
 
 \begin{frame}
 
-    \begin{center}
-        Thank you for your attention!
-    \end{center}
+\begin{columns}
+    \begin{column}{0.25\textwidth}
+	\begin{center}	
+	\bigskip
+	\includegraphics[scale=0.07]{assets/qrcode-github.pdf}
+	\end{center}
+    \end{column}
+
+   \begin{column}{0.48\textwidth}
+\begin{center}	
+        \large{Thank you for your attention!}
+\end{center}
+    \end{column}
+
+    \begin{column}{0.25\textwidth}
+	\begin{center}	
+		\bigskip
+		\includegraphics[scale=0.1]{assets/qr-code.pdf}
+	\end{center}
+    \end{column}
+\end{columns}
 
 \end{frame}
 
