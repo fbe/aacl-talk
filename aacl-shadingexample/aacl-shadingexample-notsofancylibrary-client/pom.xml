@@ -21,7 +21,7 @@
             <artifactId>aacl-shadingexample-notsofancylibrary</artifactId>
             <version>1.0.0-SNAPSHOT</version>
            <!-- <classifier>jar-with-dependencies</classifier>-->
-           <!-- <classifier>shaded</classifier>
+           <!--<classifier>shaded</classifier>
             <exclusions>
                 <exclusion>
                     <artifactId>*</artifactId>
