@@ -1,0 +1,5 @@
+var cl = new URLClassLoader(new URL[]{pluginPath.toUri().toURL()});
+var pluginClazz = cl.loadClass(pluginClassName);
+Thread.currentThread().setContextClassLoader(cl);
+var plugin = pluginClazz.getConstructor().newInstance();
+pluginClazz.getDeclaredMethod("start").invoke(plugin);
