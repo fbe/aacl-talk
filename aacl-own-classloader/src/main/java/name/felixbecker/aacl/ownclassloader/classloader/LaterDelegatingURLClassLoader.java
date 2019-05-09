@@ -1,4 +1,4 @@
-package name.felixbecker.aacl.delegationmodelbreaking.classloader;
+package name.felixbecker.aacl.ownclassloader.classloader;
 
 import java.net.URL;
 import java.net.URLClassLoader;

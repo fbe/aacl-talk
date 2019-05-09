@@ -1,4 +1,4 @@
-package name.felixbecker.aacl.delegationmodelbreaking.mains;
+package name.felixbecker.aacl.ownclassloader.mains;
 
 public class InitializationDemo {
 
