@@ -13,7 +13,6 @@
         <module>aacl-own-classloader</module>
         <module>aacl-moduleisolation</module>
         <module>aacl-shadingexample</module>
-        <module>notes</module>
         <module>aacl-hibernate-contextcl</module>
     </modules>
 
